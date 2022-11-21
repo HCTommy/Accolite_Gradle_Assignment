@@ -30,7 +30,7 @@ public class App {
                 + " : " + WordUtils.capitalizeFully(message));
     }
 
-    public static short commonsTest(String[] args) throws ParseException {
+    public static String commonsTest(String[] args) throws ParseException {
         Option msg = Option.builder("m")
                 .longOpt("message")
                 .hasArg()
@@ -43,10 +43,10 @@ public class App {
         CommandLine line = parser.parse(options, args);
 
         String  message = line.getOptionValue("m", "Hello Ivy!");
-        System.out.println("standard message : " + message);
-        System.out.println("capitalized by " + WordUtils.class.getName()
-                + " : " + WordUtils.capitalizeFully(message));
+//        System.out.println("standard message : " + message);
+//        System.out.println("capitalized by " + WordUtils.class.getName()
+//                + " : " + WordUtils.capitalizeFully(message));
 
-        return 0;
+        return WordUtils.capitalizeFully(message);
     }
 }

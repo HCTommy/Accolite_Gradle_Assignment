@@ -17,8 +17,14 @@ class AppTest {
     @Test
     void testCommons() throws ParseException {
        String[] args=new String[]{"-m","abc"};
-       assertEquals(0,App.commonsTest(args));
+       assertEquals("Abc",App.commonsTest(args));
 
+    }
+
+    @Test
+    void testCommons2() throws ParseException {
+        String[] args=new String[]{"-m","accolite"};
+        assertEquals("Accolite",App.commonsTest(args));
     }
 
 }
