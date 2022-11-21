@@ -30,7 +30,7 @@ public class App {
                 + " : " + WordUtils.capitalizeFully(message));
     }
 
-    public static String commonsTest(String[] args) throws ParseException {
+    public static String commonsTest(String str) throws ParseException {
         Option msg = Option.builder("m")
                 .longOpt("message")
                 .hasArg()
@@ -40,6 +40,7 @@ public class App {
         options.addOption(msg);
 
         CommandLineParser parser = new DefaultParser();
+        String[] args = new String[]{"-m",str};
         CommandLine line = parser.parse(options, args);
 
         String  message = line.getOptionValue("m", "Hello Ivy!");
